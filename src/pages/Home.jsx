@@ -11,7 +11,7 @@ function Home() {
     data: movies,
     isPending,
     error,
-  } = useFetch(`https://www.omdbapi.com/?s=don&apikey=6a50e04d`);
+  } = useFetch(`https://www.omdbapi.com/?s=${nameMovie}&apikey=6a50e04d`);
   const handleInput = (e) => {
     e.preventDefault();
     if (nameMovie === "") {
