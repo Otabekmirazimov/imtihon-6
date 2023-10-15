@@ -4,11 +4,12 @@ import { useFetch } from "../hooks/useFetch"
 function Movie() {
     const { imdbID } = useParams()
     const url = `http://www.omdbapi.com/?i=${imdbID}&apikey=6a50e04d`
+    console.log(url);
     const { data: movie, error, isPending } = useFetch(url)
   return (
     <div className="mx-full mt-10 flex gap-7 items-center">
       {movie && <>
-        <img className="rounded-xl" src={movie.Poster} alt={movie.Title} height="550" width="550" />
+        <img className="rounded-xl ml-[35px]" src={movie.Poster} alt={movie.Title} height="350" width="350" />
         <div>
           <h2 className="text-xl font-bold mb-4">{movie.Title}</h2>
           <p className="mb-5">
